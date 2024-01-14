@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
  
 app.get('/', (req, res) => {
-  res.send("Hello, This is Efita Effiom. I'm reworking/starting my week one assignment. Happy to be back");
+  res.send("Efita Effiom");
 });
 
  
 app.get('/efita', (req, res) => {
-    res.send("Efita Effiom");
+    res.send("Lafulji Effiom");
   });
  
 const port = 3000;
