@@ -10,9 +10,14 @@ const efitaRoute = (req, res) => {
     res.send("Muli Effiom");
   };
 
+  const amaRoute = (req, res) => {
+    res.send("Ama Effiom");
+  };
+
 
   module.exports = {
         efitaRoute,
         lafuljiRoute,
-        muliiRoute
+        muliiRoute,
+        amaRoute
     };
