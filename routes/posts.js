@@ -1,3 +1,19 @@
+/**
+ * @swagger
+ * /posts:
+ *   get:
+ *     summary: Get a list of contact posts
+ *     description: Retrieve a list of posts from the database
+ *     responses:
+ *       200:
+ *         description: Successful response
+ *         content:
+ *           application/json:
+ *             example:
+ *               posts: [{ id: 1, title: 'Sample Post' }]
+ */
+
+
 const express = require('express');
 
 const router = express.Router();

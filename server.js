@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swaggerConfig'); // Import Swagger configuration
 require('dotenv/config');
 
 const app = express();
@@ -11,8 +13,13 @@ app.use(bodyParser.json());
 // Import routes
 const postsRoutes = require('./routes/posts');
 
+app.use('/', require('./routes/index'))
+
 // Use the posts routes
 app.use('/posts', postsRoutes);
+
+// Serve Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Connect to MongoDB
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.yoczwia.mongodb.net/contact?retryWrites=true&w=majority&appName=Cluster0`;

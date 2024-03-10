@@ -15,9 +15,8 @@ const efitaRoute = (req, res) => {
   };
 
   const newRoute = (req, res) => {
-    res.send("We are on post route");
+    res.send("We are on new route");
   };
-
 
 
   module.exports = {
