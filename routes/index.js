@@ -5,6 +5,5 @@ routes.get('/', path.efitaRoute);
 routes.get('/lafulji', path.lafuljiRoute);
 routes.get('/muli', path.muliiRoute);
 routes.get('/ama',path.amaRoute);
-routes.get('/new', path.newRoute);
 
 module.exports = routes;

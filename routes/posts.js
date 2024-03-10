@@ -83,7 +83,8 @@ router.patch('/:postId', async (req, res) => {
                     name: req.body.name,
                     dateOfBirth: req.body.dateOfBirth,
                     favoriteColor: req.body.favoriteColor,
-                    email: req.body.email
+                    email: req.body.email,
+                    pet: req.body.pet
                 }
             }
         );
