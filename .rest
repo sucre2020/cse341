@@ -1,4 +1,4 @@
-GET https://cse341-winter24-12cs.onrender.com/65edbe316e00ee4ee893bca0 HTTP/1.1
+GET https://cse341-winter24-12cs.onrender.com/ HTTP/1.1
 
 ###
 GET http://localhost:3000/posts/ HTTP/1.1
