@@ -1,46 +1,40 @@
 const express = require('express');
-// added code for mongoose to enable connection 
 const mongoose = require('mongoose');
-// 
+const bodyParser = require('body-parser');
+require('dotenv/config');
+
 const app = express();
 
-const port = 3000;
+// Create middlewares
+app.use(bodyParser.json());
 
-//enable db connection
-mongoose.connect('mongodb://localhost:27017/test', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+// Import routes
+const postsRoutes = require('./routes/posts');
+
+// Use the posts routes
+app.use('/posts', postsRoutes);
+
+// Routes
+app.get('/', (req, res) => {
+    res.send('We are on home');
 });
 
-
-const personSchema = new mongoose.Schema({
-  name: String,
-  dateOfBirth: Date,
-  favoriteColor: String,
-  email: String,
+app.get('/post', (req, res) => {
+    res.send('We are on post');
 });
 
-const Person = mongoose.model('Person', personSchema);
+// Connect to MongoDB
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.yoczwia.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0`;
 
-app.get('/people', async (req, res) => {
-  try {
-    const people = await Person.find();
-    console.log(people)
-    res.json(people);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
-  }
-});
-//
-
-// app.use('/'.require('./routes'));
-
-
-app.use('/', require('./routes'));
-
- 
-
-app.listen(process.env.PORT || port, () => {
-  console.log('Web Server is listening at port ' + (process.env.PORT || 3000));
-});
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Connected to MongoDB!');
+        
+        // Start the server after successfully connecting to MongoDB
+        app.listen(3000, () => {
+            console.log('Server is running on port 3000');
+        });
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });

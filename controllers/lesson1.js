@@ -14,10 +14,16 @@ const efitaRoute = (req, res) => {
     res.send("Ama Effiom");
   };
 
+  const newRoute = (req, res) => {
+    res.send("We are on post route");
+  };
+
+
 
   module.exports = {
         efitaRoute,
         lafuljiRoute,
         muliiRoute,
-        amaRoute
+        amaRoute,
+        newRoute
     };
