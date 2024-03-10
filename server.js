@@ -26,7 +26,7 @@ app.get('/post', (req, res) => {
 // Connect to MongoDB
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.yoczwia.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0`;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri, {})
     .then(() => {
         console.log('Connected to MongoDB!');
         
