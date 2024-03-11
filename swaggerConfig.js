@@ -5,7 +5,7 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'Documentation for Contacts API',
+            title: 'Contacts API',
             version: '1.0.0',
             description: 'Documentation for Contact API',
         },

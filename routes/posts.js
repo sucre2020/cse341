@@ -11,7 +11,123 @@
  *           application/json:
  *             example:
  *               posts: [{ id: 1, title: 'Sample Post' }]
+ *
+ *   post:
+ *     summary: Create a new post
+ *     description: Submit a new post to the database
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               dateOfBirth:
+ *                 type: string
+ *                 format: date
+ *               favoriteColor:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *             required:
+ *               - name
+ *               - dateOfBirth
+ *               - favoriteColor
+ *               - email
+ *     responses:
+ *       200:
+ *         description: Post created successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 2
+ *               name: Idem Effanga
+ *               dateOfBirth: '2000-07-07'
+ *               favoriteColor: Blue
+ *               email: john@example.com
+ *
+ * /posts/{postId}:
+ *   get:
+ *     summary: Get a specific post by ID
+ *     description: Retrieve a post from the database by its ID
+ *     parameters:
+ *       - in: path
+ *         name: postId
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Successful response
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               name: Sample Post
+ *               dateOfBirth: '2000-01-01'
+ *               favoriteColor: Red
+ *               email: sample@example.com
+ *
+ *   patch:
+ *     summary: Update a specific post by ID
+ *     description: Update a post in the database by its ID
+ *     parameters:
+ *       - in: path
+ *         name: postId
+ *         schema:
+ *           type: string
+ *         required: true
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               dateOfBirth:
+ *                 type: string
+ *                 format: date
+ *               favoriteColor:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *             required:
+ *               - name
+ *               - dateOfBirth
+ *               - favoriteColor
+ *               - email
+ *     responses:
+ *       200:
+ *         description: Post updated successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               name: Updated Post
+ *               dateOfBirth: '2000-01-01'
+ *               favoriteColor: Blue
+ *               email: updated@example.com
+ *
+ *   delete:
+ *     summary: Delete a specific post by ID
+ *     description: Delete a post from the database by its ID
+ *     parameters:
+ *       - in: path
+ *         name: postId
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Post deleted successfully
+ *       404:
+ *         description: Post not found or already deleted
  */
+
 
 
 const express = require('express');
