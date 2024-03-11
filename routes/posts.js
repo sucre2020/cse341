@@ -46,7 +46,7 @@
  *               name: Idem Effanga
  *               dateOfBirth: '2000-07-07'
  *               favoriteColor: Blue
- *               email: john@example.com
+ *               email: Idem@example.com
  *
  * /posts/{postId}:
  *   get:
