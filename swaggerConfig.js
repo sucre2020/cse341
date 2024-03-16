@@ -7,10 +7,13 @@ const options = {
         info: {
             title: 'Contacts API',
             version: '1.0.0',
-            description: 'Documentation for Contact API',
+            description: 'Documentation for Project API',
+            // description: 'Documentation for Contact API',
         },
     },
-    apis: ['./routes/*.js'], // Path to API routes
+    // apis: ['./routes/*.js'], // Path to API routes
+    apis: ['./routes/projects.js'], // Path to API routes
+
 };
 
 const swaggerSpec = swaggerJSDoc(options);

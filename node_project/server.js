@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
-const swaggerSpec = require('./swaggerConfig'); // Import Swagger configuration
+const swaggerSpec = require('../swaggerConfig'); // Import Swagger configuration
 require('dotenv/config');
 
 const app = express();
@@ -11,12 +11,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Import routes
-const postsRoutes = require('./routes/posts');
+const postsRoutes = require('./routes/projects');
 
-app.use('/', require('./routes/index'))
+// app.use('/', require('./routes/projects'))
 
 // Use the posts routes
-app.use('/posts', postsRoutes);
+app.use('/projects', postsRoutes);
 
 // Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
@@ -28,7 +28,7 @@ mongoose.connect(uri, {})
     .then(() => {
         console.log('Connected to MongoDB Successfully!');
         
-        // Set the port from the environment variable or default to 3000
+        // Set the port from the environment variable or default to 4000
         const port = process.env.PORT || 4000;
 
         // Start the server after successfully connecting to MongoDB
