@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
-const swaggerSpec = require('../swaggerConfig'); // Import Swagger configuration
+const swaggerSpec = require('./swagger.Config'); // Import Swagger configuration
 require('dotenv/config');
 
 const app = express();
