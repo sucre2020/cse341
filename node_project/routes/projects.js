@@ -2,8 +2,8 @@
  * @swagger
  * /projects:
  *   get:
- *     summary: Get a list of projects
- *     description: Retrieve a list of projects from the database
+ *     summary: Get all projects
+ *     description: Retrieve a list of all projects from the database.
  *     responses:
  *       200:
  *         description: Successful response
@@ -14,7 +14,7 @@
  *
  *   post:
  *     summary: Create a new project
- *     description: Submit a new project to the database
+ *     description: Submit a new project to the database.
  *     requestBody:
  *       required: true
  *       content:
@@ -27,6 +27,7 @@
  *               dateOfBirth:
  *                 type: string
  *                 format: date
+ *                 example: "DD-MM-YYYY"
  *               favoriteColor:
  *                 type: string
  *               email:
@@ -49,7 +50,7 @@
  *               - working
  *               - hobbies
  *     responses:
- *       200:
+ *       201:
  *         description: Project created successfully
  *         content:
  *           application/json:
@@ -67,7 +68,7 @@
  * /projects/{projectId}:
  *   get:
  *     summary: Get a specific project by ID
- *     description: Retrieve a project from the database by its ID
+ *     description: Retrieve a project from the database by its ID.
  *     parameters:
  *       - in: path
  *         name: projectId
@@ -92,7 +93,7 @@
  *
  *   patch:
  *     summary: Update a specific project by ID
- *     description: Update a project in the database by its ID
+ *     description: Update a project in the database by its ID.
  *     parameters:
  *       - in: path
  *         name: projectId
@@ -111,6 +112,7 @@
  *               dateOfBirth:
  *                 type: string
  *                 format: date
+ *                 example: "DD-MM-YYYY"
  *               favoriteColor:
  *                 type: string
  *               email:
@@ -150,7 +152,7 @@
  *
  *   delete:
  *     summary: Delete a specific project by ID
- *     description: Delete a project from the database by its ID
+ *     description: Delete a project from the database by its ID.
  *     parameters:
  *       - in: path
  *         name: projectId
@@ -163,6 +165,7 @@
  *       404:
  *         description: Project not found or already deleted
  */
+
 
 const express = require('express');
 const router = express.Router();
