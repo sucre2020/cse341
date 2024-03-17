@@ -5,12 +5,12 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'Contacts API',
+            title: 'Project API',
             version: '1.0.0',
             description: 'Documentation for Project API',
         },
     },
-    apis: ['./routes/projects.js'], // Path to API routes
+    apis: ['./routes/*.js'], // Path to API routes
 
 };
 
