@@ -1,20 +1,20 @@
 /**
  * @swagger
- * /posts:
+ * /projects:
  *   get:
- *     summary: Get a list of posts
- *     description: Retrieve a list of posts from the database
+ *     summary: Get a list of projects
+ *     description: Retrieve a list of projects from the database
  *     responses:
  *       200:
  *         description: Successful response
  *         content:
  *           application/json:
  *             example:
- *               posts: [{ id: 1, name: 'Sample Post' }]
+ *               projects: [{ id: 1, name: 'Sample Project' }]
  *
  *   post:
- *     summary: Create a new post
- *     description: Submit a new post to the database
+ *     summary: Create a new project
+ *     description: Submit a new project to the database
  *     requestBody:
  *       required: true
  *       content:
@@ -50,7 +50,7 @@
  *               - hobbies
  *     responses:
  *       200:
- *         description: Post created successfully
+ *         description: Project created successfully
  *         content:
  *           application/json:
  *             example:
@@ -64,13 +64,13 @@
  *               working: Yes
  *               hobbies: Coding
  *
- * /posts/{postId}:
+ * /projects/{projectId}:
  *   get:
- *     summary: Get a specific post by ID
- *     description: Retrieve a post from the database by its ID
+ *     summary: Get a specific project by ID
+ *     description: Retrieve a project from the database by its ID
  *     parameters:
  *       - in: path
- *         name: postId
+ *         name: projectId
  *         schema:
  *           type: string
  *         required: true
@@ -81,7 +81,7 @@
  *           application/json:
  *             example:
  *               id: 1
- *               name: Sample Post
+ *               name: Sample Project
  *               dateOfBirth: '2000-01-01'
  *               favoriteColor: Red
  *               email: sample@example.com
@@ -91,11 +91,11 @@
  *               hobbies: Reading
  *
  *   patch:
- *     summary: Update a specific post by ID
- *     description: Update a post in the database by its ID
+ *     summary: Update a specific project by ID
+ *     description: Update a project in the database by its ID
  *     parameters:
  *       - in: path
- *         name: postId
+ *         name: projectId
  *         schema:
  *           type: string
  *         required: true
@@ -134,12 +134,12 @@
  *               - hobbies
  *     responses:
  *       200:
- *         description: Post updated successfully
+ *         description: Project updated successfully
  *         content:
  *           application/json:
  *             example:
  *               id: 1
- *               name: Updated Post
+ *               name: Updated Project
  *               dateOfBirth: '2000-01-01'
  *               favoriteColor: Blue
  *               email: updated@example.com
@@ -149,28 +149,26 @@
  *               hobbies: Traveling
  *
  *   delete:
- *     summary: Delete a specific post by ID
- *     description: Delete a post from the database by its ID
+ *     summary: Delete a specific project by ID
+ *     description: Delete a project from the database by its ID
  *     parameters:
  *       - in: path
- *         name: postId
+ *         name: projectId
  *         schema:
  *           type: string
  *         required: true
  *     responses:
  *       200:
- *         description: Post deleted successfully
+ *         description: Project deleted successfully
  *       404:
- *         description: Post not found or already deleted
+ *         description: Project not found or already deleted
  */
-
 
 
 const express = require('express');
 const router = express.Router();
 const Project = require('../models/Project'); 
-const validationResult = require('express');
-const {body} = require('express-validator');
+const { body, validationResult } = require('express-validator');
 
 
 // Data validation middleware
