@@ -168,7 +168,8 @@
 const express = require('express');
 const router = express.Router();
 const Project = require('../models/Project'); 
-const { body, validationResult } = require('express');
+const validationResult = require('express');
+const {body} = require('express-validator');
 
 
 // Data validation middleware
