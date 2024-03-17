@@ -1,4 +1,3 @@
-// swaggerConfig.js
 const swaggerJSDoc = require('swagger-jsdoc');
 
 const options = {
@@ -10,8 +9,7 @@ const options = {
             description: 'Documentation for Project API',
         },
     },
-    apis: ['./routes/*.js'], // Path to API routes
-
+    apis: ['./routes/projects.js'], // Path to API routes
 };
 
 const swaggerSpec = swaggerJSDoc(options);
