@@ -1,5 +1,5 @@
 const efitaRoute = (req, res) => {
-    res.send("Efita Effiom");
+    res.send("Hello! I am Efita Effiom. \nWelcome to my project's homepage");
   };
 
   const lafuljiRoute = (req, res) => {

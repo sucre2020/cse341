@@ -18,6 +18,8 @@ const postsRoutes = require('./routes/projects');
 // Use the posts routes
 app.use('/projects', postsRoutes);
 
+app.use('/', require('../routes/index'))
+
 // Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
