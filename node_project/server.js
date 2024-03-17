@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Import routes
-const postsRoutes = require('./routes/projects');
+const postsRoutes = require('./routes/posts');
 
 // app.use('/', require('./routes/projects'))
 
