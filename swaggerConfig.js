@@ -11,8 +11,8 @@ const options = {
             // description: 'Documentation for Contact API',
         },
     },
-    // apis: ['./routes/*.js'], // Path to API routes
-    apis: ['./routes/projects.js'], // Path to API routes
+    apis: ['./routes/*.js'], // Path to API routes
+    // apis: ['./routes/projects.js'], // Path to API routes
 
 };
 

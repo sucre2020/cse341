@@ -250,18 +250,18 @@ router.get('/:projectId', async (req, res) => {
 // Update a project by ID
 router.patch(
     '/:projectId',
-    [
-        // Validate request body fields
-        body('name').isString().notEmpty(),
-        body('dateOfBirth').isDate(),
-        body('favoriteColor').isString().notEmpty(),
-        body('email').isEmail(),
-        body('gender').isString().notEmpty(),
-        body('student').isString().notEmpty(),
-        body('working').isString().notEmpty(),
-        body('hobbies').isString().notEmpty(),
-        validate, // Middleware for data validation
-    ], 
+    // [
+    //     // Validate request body fields
+    //     body('name').isString().notEmpty(),
+    //     body('dateOfBirth').isDate(),
+    //     body('favoriteColor').isString().notEmpty(),
+    //     body('email').isEmail(),
+    //     body('gender').isString().notEmpty(),
+    //     body('student').isString().notEmpty(),
+    //     body('working').isString().notEmpty(),
+    //     body('hobbies').isString().notEmpty(),
+    //     validate, // Middleware for data validation
+    // ], 
     async (req, res) => {
         try {
             const updatedProject = await Project.findByIdAndUpdate(req.params.projectId, req.body, { new: true });
