@@ -96,7 +96,7 @@
  *     description: Update a project in the database by its ID.
  *     parameters:
  *       - in: path
- *         name: projectId
+ *         name:projectId
  *         schema:
  *           type: string
  *         required: true
