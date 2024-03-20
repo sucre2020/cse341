@@ -6,7 +6,7 @@ const options = {
         info: {
             title: 'Project API',
             version: '1.0.0',
-            description: 'Documentation for Project API',
+            description: 'Documentation On How To Use This Project API',
         },
     },
     apis: ['./myRoute/projects.js'], // Path to API routes

@@ -11,12 +11,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Import routes
-const postsRoutes = require('./myRoute/projects');
+const projectsRoutes = require('./myRoute/projects');
 
 // app.use('/', require('./routes/projects'))
 
 // Use the posts routes
-app.use('/projects', postsRoutes);
+app.use('/projects', projectsRoutes);
 
 app.use('/', require('../routes/index'))
 
