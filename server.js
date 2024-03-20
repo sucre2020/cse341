@@ -11,12 +11,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Import routes
-const postsRoutes = require('./routes/posts');
+const postsRoutes = require('./routes/projects');
 
 app.use('/', require('./routes/index'))
 
-// Use the posts routes
-app.use('/posts', postsRoutes);
+// Use the projects routes
+app.use('/projects', postsRoutes);
 
 // Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));

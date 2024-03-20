@@ -7,11 +7,11 @@ const options = {
         info: {
             title: 'Contacts API',
             version: '1.0.0',
-            description: 'Documentation for Project API',
+            description: 'Documentation for New Project API',
             // description: 'Documentation for Contact API',
         },
     },
-    apis: ['./routes/*.js'], // Path to API routes
+    apis: ['./routes/projects.js'], // Path to API routes
     // apis: ['./routes/projects.js'], // Path to API routes
 
 };
